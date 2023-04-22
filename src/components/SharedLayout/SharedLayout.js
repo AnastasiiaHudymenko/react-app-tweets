@@ -23,16 +23,14 @@ export const SharedLayout = () => {
                   <StyledLink to="/">Home</StyledLink>
                 </ItemNav>
                 <ItemNav>
-                  <StyledLink to="/tweets" end>
-                    Tweets
-                  </StyledLink>
+                  <StyledLink to="/tweets">Tweets</StyledLink>
                 </ItemNav>
               </ListNav>
             </Nav>
           </ContainerContent>
         </Container>
       </Header>
-      <Outlet />
+      <main>{<Outlet />}</main>
     </>
   );
 };
