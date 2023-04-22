@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllUsers } from 'services/api';
 import { TweetsList } from 'components/TweetsList/TweetsList';
 import { Button } from 'components/Button/Button';
-import { Container } from 'globalStyles/Global.styled';
+import { Container, Section, StyledLink } from 'globalStyles/Global.styled';
 
 export const TweetsMain = ({ users, getPage, loaded, updateUserFollowers }) => {
   const [allListUsers, setAllListUsers] = useState([]);
@@ -37,7 +37,8 @@ export const TweetsMain = ({ users, getPage, loaded, updateUserFollowers }) => {
   };
 
   return (
-    <section>
+    <Section>
+      <StyledLink to="/">Back to Home</StyledLink>
       <Container>
         <TweetsList
           handleChangeFollowers={handleChangeFollowers}
@@ -46,6 +47,6 @@ export const TweetsMain = ({ users, getPage, loaded, updateUserFollowers }) => {
         />
         <Button users={users} loaded={loaded} getPage={getPage} />
       </Container>
-    </section>
+    </Section>
   );
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   max-width: 1000px;
@@ -26,4 +27,18 @@ export const ErrTitle = styled.p`
 export const ErrImg = styled.img`
   width: 40px;
   height: 40px;
+`;
+
+export const Section = styled.section`
+  padding: 40px;
+`;
+
+export const StyledLink = styled(Link)`
+  color: #04a0e0;
+  border: 1px solid #04a0e0;
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 10px;
+  margin-bottom: 25px;
+  display: inline-block;
 `;

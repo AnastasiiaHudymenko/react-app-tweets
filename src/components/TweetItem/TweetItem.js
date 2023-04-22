@@ -1,3 +1,4 @@
+import { formatNumber } from 'auxiliary/formatNumber';
 import {
   CardUser,
   ThumbImg,
@@ -16,7 +17,7 @@ export const TweetItem = ({ users, follow, handleChangeFollowers }) => {
         </ThumbImg>
         <WrapContent>
           <DeskTitle>{tweets} tweets</DeskTitle>
-          <DeskTitle>{followers} followers</DeskTitle>
+          <DeskTitle>{formatNumber(followers)} followers</DeskTitle>
         </WrapContent>
         <Btn
           followed={follow[idx]}
