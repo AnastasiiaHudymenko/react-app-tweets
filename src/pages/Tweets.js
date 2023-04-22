@@ -17,7 +17,6 @@ export const TweetsPage = () => {
       setPage(prev => prev + 1);
       const res = await fetchUsers(page);
       setUsers(prev => [...prev, ...res]);
-      setLoadMore(false);
     } catch (e) {
       setError(e.message);
     } finally {
@@ -25,20 +24,20 @@ export const TweetsPage = () => {
     }
   };
 
-  const updateUserFollowers = async (id, followers, action) => {
+  const updateUserFollowers = async (id, followers, isFollowing) => {
     let body;
-    if (!action) {
-      body = { followers: followers + 1 };
-    } else {
-      body = { followers: followers - 1 };
+    !isFollowing
+      ? (body = { followers: followers + 1 })
+      : (body = { followers: followers - 1 });
+
+    try {
+      await updateUser({ id, body });
+    } catch (e) {
+      console.log(e);
     }
-    await updateUser({ id, body });
 
     const updateFollowers = users.map(user => {
-      if (user.id === id) {
-        return { ...user, ...body };
-      }
-      return user;
+      return user.id === id ? { ...user, ...body } : user;
     });
     setUsers(updateFollowers);
   };
@@ -49,7 +48,6 @@ export const TweetsPage = () => {
         setIsloading(true);
         const res = await fetchUsers();
         setUsers(res);
-        setIsloading(false);
       } catch (e) {
         setError(e.message);
       } finally {
