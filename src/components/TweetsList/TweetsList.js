@@ -1,13 +1,14 @@
 import { TweetItem } from '../TweetItem/TweetItem';
+import { UserCard } from './TweetsList.styled';
 
 export const TweetsList = ({ users, handleChangeFollowers, follow }) => {
   return (
-    <ul>
+    <UserCard>
       <TweetItem
         handleChangeFollowers={handleChangeFollowers}
         follow={follow}
         users={users}
       />
-    </ul>
+    </UserCard>
   );
 };

@@ -1,17 +1,30 @@
+import {
+  CardUser,
+  ThumbImg,
+  AvatarUser,
+  WrapContent,
+  DeskTitle,
+  Btn,
+} from './TweetItem.styled';
+
 export const TweetItem = ({ users, follow, handleChangeFollowers }) => {
   return users.map(({ id, avatar, user, tweets, followers }, idx) => {
     return (
-      <li key={id}>
-        <img width={60} src={avatar} alt="user avatar" />
-        <p>{user}</p>
-        <p>{tweets}</p>
-        <p>{followers}</p>
-        <button
+      <CardUser key={id}>
+        <ThumbImg>
+          <AvatarUser src={avatar} alt={user} />
+        </ThumbImg>
+        <WrapContent>
+          <DeskTitle>{tweets} tweets</DeskTitle>
+          <DeskTitle>{followers} followers</DeskTitle>
+        </WrapContent>
+        <Btn
+          followed={follow[idx]}
           onClick={() => handleChangeFollowers(id, followers, follow[idx], idx)}
         >
           {follow[idx] ? 'Following' : 'Follow'}
-        </button>
-      </li>
+        </Btn>
+      </CardUser>
     );
   });
 };
