@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/react-app-tweets/static/css/main.0238324a.css",
-    "main.js": "/react-app-tweets/static/js/main.405a3069.js",
+    "main.js": "/react-app-tweets/static/js/main.d1188092.js",
     "static/media/picture.png": "/react-app-tweets/static/media/picture.032662a2a907475127d7.png",
     "static/media/twitter.png": "/react-app-tweets/static/media/twitter.570a83358b62aadac17a.png",
     "static/media/speech-bubble.png": "/react-app-tweets/static/media/speech-bubble.e0833ae5e8c1e4223f9b.png",
     "index.html": "/react-app-tweets/index.html",
     "main.0238324a.css.map": "/react-app-tweets/static/css/main.0238324a.css.map",
-    "main.405a3069.js.map": "/react-app-tweets/static/js/main.405a3069.js.map"
+    "main.d1188092.js.map": "/react-app-tweets/static/js/main.d1188092.js.map"
   },
   "entrypoints": [
     "static/css/main.0238324a.css",
-    "static/js/main.405a3069.js"
+    "static/js/main.d1188092.js"
   ]
 }
