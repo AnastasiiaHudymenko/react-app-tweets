@@ -28,7 +28,6 @@ export const ThumbImg = styled.div`
 `;
 
 export const AvatarUser = styled.img`
-  width: 80px;
   border-radius: 50%;
   overflow: hidden;
   object-fit: cover;
@@ -74,13 +73,3 @@ export const Btn = styled.button`
     background-color: ${props => (props.followed ? ' #5CD3A8' : ' #ebd8ff')};
   }
 `;
-// export const MainContainetContent = styled.div`
-//   position: absolute;
-//   border: 8px solid #ebd8ff;
-//   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-//     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
-//   width: 96%;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -80%);
-// `;

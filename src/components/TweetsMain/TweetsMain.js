@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { fetchAllUsers } from 'services/api';
 import { TweetsList } from 'components/TweetsList/TweetsList';
 import { Button } from 'components/Button/Button';
@@ -38,8 +39,16 @@ export const TweetsMain = ({ users, getPage, loaded, updateUserFollowers }) => {
 
   return (
     <Section>
-      <StyledLink to="/">Back to Home</StyledLink>
       <Container>
+        <StyledLink to="/">Back to Home</StyledLink>
+        <div>
+          <section>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </section>
+        </div>
         <TweetsList
           handleChangeFollowers={handleChangeFollowers}
           users={users}
@@ -49,4 +58,11 @@ export const TweetsMain = ({ users, getPage, loaded, updateUserFollowers }) => {
       </Container>
     </Section>
   );
+};
+
+TweetsMain.propTypes = {
+  users: PropTypes.array,
+  getPage: PropTypes.func,
+  loaded: PropTypes.bool,
+  updateUserFollowers: PropTypes.func,
 };

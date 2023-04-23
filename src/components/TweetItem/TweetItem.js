@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { formatNumber } from 'auxiliary/formatNumber';
 import {
   CardUser,
@@ -13,7 +14,7 @@ export const TweetItem = ({ users, follow, handleChangeFollowers }) => {
     return (
       <CardUser key={id}>
         <ThumbImg>
-          <AvatarUser src={avatar} alt={user} />
+          <AvatarUser width={80} src={avatar} alt={user} />
         </ThumbImg>
         <WrapContent>
           <DeskTitle>{tweets} tweets</DeskTitle>
@@ -28,4 +29,18 @@ export const TweetItem = ({ users, follow, handleChangeFollowers }) => {
       </CardUser>
     );
   });
+};
+
+TweetItem.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      avatar: PropTypes.string,
+      user: PropTypes.string,
+      tweets: PropTypes.number,
+      followers: PropTypes.number,
+    })
+  ),
+  follow: PropTypes.arrayOf(PropTypes.bool),
+  handleChangeFollowers: PropTypes.func,
 };
