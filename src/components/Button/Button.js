@@ -5,15 +5,12 @@ export const Button = ({ getPage, loaded, users, selectedOption }) => {
   const handleClickLoadMore = () => {
     getPage();
   };
+  const isShowBtn =
+    selectedOption !== '' ? 'none' : users.length !== 26 ? 'block' : ' none';
   return (
     <ButtonLoadMore
       style={{
-        display:
-          selectedOption !== ''
-            ? 'none'
-            : users.length !== 26
-            ? 'block'
-            : ' none',
+        display: isShowBtn,
       }}
       onClick={handleClickLoadMore}
       type="button"

@@ -1,9 +1,39 @@
-# Інструкції з встановлення
+## React-app-tweets
 
-Для того, щоб запустити цей проект у вас повинен бути встановлений Node.js,
-переконайтеся, що він є на вашому комп'ютері. Для цього можна ввести в терміналі
-команду `node -v`. Якщо він не встановлений
-[Скачай та встанови](https://nodejs.org/en/). Після того введіть в термінал
-команду `npm install` для того, щоб встановити всі залежності, які є в проекті.
-Після успішного встановлення залежностей, запусти режим розробки, виконавши
-команду `npm start` . Цей проект відкриється у вкладці браузера
+---
+
+[React-app-tweets](https://github.com/AnastasiiaHudymenko/react-app-tweets) -
+web pages to save in memory followers.
+
+### How to run project locally
+
+---
+
+You must have Node.js installed to run this project.
+[Download and install](https://nodejs.org/en) if required.
+
+- clone this repository or create a new repository using this one as a template;
+- in the project directory, open console (bash is highly recommended) and run:
+  npm install;
+- npm start runs the app in development mode;
+- run http://localhost:3000/tweets to view in your browser; The page reloads
+  automatically showing your changes and any errors in the console.
+
+### I used
+
+---
+
+- HTML and CSS
+- React.js
+- REST API, axios
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [react-loader-spinner](https://mhnpd.github.io/react-loader-spinner/)
+- [styled-component](https://styled-components.com/docs/basics)
+- [Mockapi](https://mockapi.io/)
+- Git/Github;
+
+### License
+
+---
+
+This is an open-source project. No any requests or links needed
