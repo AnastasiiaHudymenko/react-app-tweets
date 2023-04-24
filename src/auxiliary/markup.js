@@ -89,6 +89,7 @@ const actualMarkup = (
   idx,
   handleChangeFollowers
 ) => {
+  console.log('hello');
   return (
     <CardUser key={id}>
       <ThumbImg>
