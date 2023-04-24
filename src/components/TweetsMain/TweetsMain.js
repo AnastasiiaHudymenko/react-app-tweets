@@ -13,25 +13,7 @@ export const TweetsMain = ({
   updateUserFollowers,
   follow,
 }) => {
-  // const [follow, setFollow] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await fetchAllUsers();
-  //     const updateUsersLocalStorage = res.map(user => ({
-  //       ...user,
-  //       isFollow: false,
-  //     }));
-  //     const storedFollow = localStorage.getItem('follow');
-  //     if (storedFollow) {
-  //       setFollow(JSON.parse(storedFollow));
-  //     } else {
-  //       localStorage.setItem('follow', JSON.stringify(updateUsersLocalStorage));
-  //       setFollow(() => JSON.parse(localStorage.getItem('follow')));
-  //     }
-  //   })();
-  // }, []);
 
   const handleChangeFollowers = (id, followers, isFollowing) => {
     const updateFollower = follow.map(el => {
