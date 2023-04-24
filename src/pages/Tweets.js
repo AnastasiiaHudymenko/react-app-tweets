@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchUsers, updateUser } from 'services/api';
+import { fetchUsers, updateUser, fetchAllUsers } from 'services/api';
 import { TweetsMain } from 'components/TweetsMain/TweetsMain';
 import { Spinner } from 'components/Spinner/Spinner';
 import { ErrorMsg } from 'components/ErrorMsg/ErrorMsg';
@@ -10,6 +10,7 @@ export const TweetsPage = () => {
   const [loadMore, setLoadMore] = useState(false);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(2);
+  const [follow, setFollow] = useState([]);
 
   const handleLoadMore = async () => {
     try {
@@ -24,7 +25,13 @@ export const TweetsPage = () => {
     }
   };
 
-  const updateUserFollowers = async (id, followers, isFollowing) => {
+  const updateUserFollowers = async (
+    id,
+    followers,
+    isFollowing,
+    updateFollower
+  ) => {
+    setFollow(updateFollower);
     let body;
     !isFollowing
       ? (body = { followers: followers + 1 })
@@ -56,12 +63,30 @@ export const TweetsPage = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      const res = await fetchAllUsers();
+      const updateUsersLocalStorage = res.map(user => ({
+        ...user,
+        isFollow: false,
+      }));
+      const storedFollow = localStorage.getItem('follow');
+      if (storedFollow) {
+        setFollow(JSON.parse(storedFollow));
+      } else {
+        localStorage.setItem('follow', JSON.stringify(updateUsersLocalStorage));
+        setFollow(() => JSON.parse(localStorage.getItem('follow')));
+      }
+    })();
+  }, []);
+
   return isLoading ? (
     <Spinner />
   ) : error ? (
     <ErrorMsg errMsg={error} />
   ) : (
     <TweetsMain
+      follow={follow}
       updateUserFollowers={updateUserFollowers}
       loaded={loadMore}
       getPage={handleLoadMore}
